@@ -1,0 +1,48 @@
+body{font-family: Verdana, Geneva, sans-serif;	
+
+}
+
+h1, h2, h3{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+h1{
+	font-size: 36px;
+}
+
+h2{
+	font-size: 12px;
+	margin-top: 30px;
+}
+
+h3{
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+p{
+	line-height:1.4em;
+}
+
+li{
+	margin-bottom: 15px;
+}
+
+#header-hr{
+	margin-bottom: 30px;
+}
+
+#footer-hr{
+	margin-top: 30px;
+}
+
+.bold{
+	font-weight: bold;
+}
