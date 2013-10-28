@@ -1,0 +1,92 @@
+body{
+	font-family:"Times New Roman",Georgia,Serif;
+	background-color: gray;
+	text-align: center;
+	width: 960px;
+	margin: auto;
+}
+
+section{
+	width: 42%;
+	float: left;
+	margin: 0 4% 4% 4%;
+	background-color: white;
+}
+
+header{
+	width: 100%;
+	background-color: #896A5D;
+	padding: 20px 0 0 0; 
+}
+
+nav{
+	padding: 0 0 20px 0;
+}
+
+footer{
+	background-color: #230B03;
+	width: 100%;
+	padding: 0 0 0 0;
+	clear: both;
+}
+
+h1{
+	text-transform: uppercase;
+	font-size: 2.5em;	
+	color: white;
+	font-family: Verdana, Geneva, sans-serif;
+	margin: .3em 0 .3em 0; 
+	line-height: 1em;
+	
+}
+
+h2{
+	color: brown;
+	margin: 30px 0px 10px 0px;
+	font-family: Verdana, Geneva, sans-serif;
+
+}
+
+.headline{
+	width: 20%;
+	margin: auto;
+}
+.Dream{
+	border-bottom:3px dotted black; 
+	padding-bottom:20px;
+	margin-bottom: 0px;
+	font-family: cursive; 
+	text-transform: lowercase;
+	color: brown;
+	line-height: 0px;
+	display: block;
+}
+
+.footer{
+	color: #564031;
+	margin: 0 0 0 0;
+	padding: 40px 0 40px 0;
+}
+
+.main{
+	width: 100%;
+	background-color: white;
+}
+
+ul{
+	background-color: brown;
+	padding: 5px 5px;
+}
+li{
+	display: inline;
+} 
+
+a{
+	text-decoration: none;
+	color: tan;
+	margin: 0 5px 0 5px;
+}
+p{
+	line-height: 1.4em;
+}
+
