@@ -3,6 +3,7 @@ body{
 	background-color: gray;
 	text-align: center;
 	width: 960px;
+	max-width: 90%;
 	margin: auto;
 }
 
@@ -89,4 +90,7 @@ a{
 p{
 	line-height: 1.4em;
 }
+
+
+git clone https://github.com/kentonkodner/kentonkodner.github.io.git
 
