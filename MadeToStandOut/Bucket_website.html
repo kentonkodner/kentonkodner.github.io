@@ -1,0 +1,1201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+<title> BucketFeet Artist Contest</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Default Description" />
+<meta name="keywords" content="Magento, Varien, E-commerce" />
+<meta name="robots" content="*" />
+<meta name="google-site-verification" content="m7b6CB_hiUE9ePvR__VfDYGnb3hjAI9afFStiynVXOQ" />
+<!--<meta http-equiv="cache-control" content="no-cache"> -->
+
+		<meta property="og:image" content="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/images/img/fb-share-image.png"/>
+
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+
+
+
+<link rel="icon" href="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/favicon.ico" type="image/x-icon" />
+<link rel="canonical" href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/" />
+<link href="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/css/skin.css" type="text/css" rel="stylesheet" />
+
+<!--[if lt IE 9]>
+<link href="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/css/style-9.css" type="text/css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+<link href="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/css/styles-ie7.css" type="text/css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+var jQuery = $j = $ =$.noConflict();
+//]]>
+</script>
+<script type="text/javascript" src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'http://www.bucketfeet.com/js/blank.html';
+    var BLANK_IMG = 'http://www.bucketfeet.com/js/spacer.gif';
+//]]>
+</script>
+<link rel="stylesheet" type="text/css" href="http://www.bucketfeet.com/media/css/ca9478f647b4dadd1ed0ff83fe298376.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.bucketfeet.com/media/css/c43b8baed127308c7cdd61bbf6f76950.css" media="print" />
+<script type="text/javascript" src="http://www.bucketfeet.com/media/js/ee221b3efe66c7eba0d2576504fe1370.js"></script>
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="http://www.bucketfeet.com/media/css/ab5da1acd881318a33e2c8b4c334dbab.css" media="all" />
+<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="http://www.bucketfeet.com/media/css/f645dfaf2ad4ae949c9907e314b1912b.css" media="all" />
+<script type="text/javascript" src="http://www.bucketfeet.com/media/js/046dbea20e49f9bed828ce186bf00db0.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = [];
+//]]>
+</script>
+<script type="text/javascript">
+
+var AmAjaxObj = new AmAjax({"send_url":"http:\/\/www.bucketfeet.com\/index.php\/amcart\/ajax\/index\/","update_url":"http:\/\/www.bucketfeet.com\/index.php\/checkout\/cart\/updatePost\/","src_image_progress":"http:\/\/www.bucketfeet.com\/skin\/frontend\/base\/default\/images\/amasty\/loading.gif","enable_minicart":"1","type_loading":"0","error":" \u2191 This is a required field.","align":"0","is_product_view":0});
+    var optionFileUpload = {
+        productForm : $('product_addtocart_form'),
+        formAction : '',
+        formElements : {},
+        upload : function(element){
+            this.formElements = this.productForm.select('input', 'select', 'textarea', 'button');
+            this.removeRequire(element.readAttribute('id').sub('option_', ''));
+
+            template = '<iframe id="upload_target" name="upload_target" style="width:0; height:0; border:0;"><\/iframe>';
+
+            Element.insert($('option_'+element.readAttribute('id').sub('option_', '')+'_uploaded_file'), {after: template});
+
+            this.formAction = this.productForm.action;
+
+            var baseUrl = 'http://www.bucketfeet.com/index.php/artistcontest/product/upload/';
+            var urlExt = 'option_id/'+element.readAttribute('id').sub('option_', '');
+
+            this.productForm.action = parseSidUrl(baseUrl, urlExt);
+            this.productForm.target = 'upload_target';
+            this.productForm.submit();
+            this.productForm.target = '';
+            this.productForm.action = this.formAction;
+        },
+        removeRequire : function(skipElementId){
+            for(var i=0; i<this.formElements.length; i++){
+                if (this.formElements[i].readAttribute('id') != 'option_'+skipElementId+'_file' && this.formElements[i].type != 'button') {
+                    this.formElements[i].disabled='disabled';
+                }
+            }
+        },
+        addRequire : function(skipElementId){
+            for(var i=0; i<this.formElements.length; i++){
+                if (this.formElements[i].readAttribute('name') != 'options_'+skipElementId+'_file' && this.formElements[i].type != 'button') {
+                    this.formElements[i].disabled='';
+                }
+            }
+        },
+        uploadCallback : function(data){
+            this.addRequire(data.optionId);
+            $('upload_target').remove();
+
+            if (data.error) {
+
+            } else {
+                $('option_'+data.optionId+'_uploaded_file').value = data.fileName;
+                $('option_'+data.optionId+'_file').value = '';
+                $('option_'+data.optionId+'_file').hide();
+                $('option_'+data.optionId+'').hide();
+                template = '<div id="option_'+data.optionId+'_file_box"><a href="#"><img src="var/options/'+data.fileName+'" alt=""><\/a><a href="#" onclick="optionFileUpload.removeFile('+data.optionId+')" title="Remove file" \/>Remove file<\/a>';
+
+                Element.insert($('option_'+data.optionId+'_uploaded_file'), {after: template});
+            }
+        },
+        removeFile : function(optionId)
+        {
+            $('option_'+optionId+'_uploaded_file').value= '';
+            $('option_'+optionId+'_file').show();
+            $('option_'+optionId+'').show();
+
+            $('option_'+optionId+'_file_box').remove();
+        }
+    }
+    var optionTextCounter = {
+        count : function(field,cntfield,maxlimit){
+            if (field.value.length > maxlimit){
+                field.value = field.value.substring(0, maxlimit);
+            } else {
+                cntfield.innerHTML = maxlimit - field.value.length;
+            }
+        }
+    }
+
+    Product.Options = Class.create();
+    Product.Options.prototype = {
+        initialize : function(config) {
+            this.config = config;
+            this.reloadPrice();
+            document.observe("dom:loaded", this.reloadPrice.bind(this));
+        },
+        reloadPrice : function() {
+            var config = this.config;
+            var skipIds = [];
+            $$('body .product-custom-option').each(function(element){
+                var optionId = 0;
+                element.name.sub(/[0-9]+/, function(match){
+                    optionId = parseInt(match[0], 10);
+                });
+                if (config[optionId]) {
+                    var configOptions = config[optionId];
+                    var curConfig = {price: 0};
+                    if (element.type == 'checkbox' || element.type == 'radio') {
+                        if (element.checked) {
+                            if (typeof configOptions[element.getValue()] != 'undefined') {
+                                curConfig = configOptions[element.getValue()];
+                            }
+                        }
+                    } else if(element.hasClassName('datetime-picker') && !skipIds.include(optionId)) {
+                        dateSelected = true;
+                        $$('.product-custom-option[id^="options_' + optionId + '"]').each(function(dt){
+                            if (dt.getValue() == '') {
+                                dateSelected = false;
+                            }
+                        });
+                        if (dateSelected) {
+                            curConfig = configOptions;
+                            skipIds[optionId] = optionId;
+                        }
+                    } else if(element.type == 'select-one' || element.type == 'select-multiple') {
+                        if ('options' in element) {
+                            $A(element.options).each(function(selectOption){
+                                if ('selected' in selectOption && selectOption.selected) {
+                                    if (typeof(configOptions[selectOption.value]) != 'undefined') {
+                                        curConfig = configOptions[selectOption.value];
+                                    }
+                                }
+                            });
+                        }
+                    } else {
+                        if (element.getValue().strip() != '') {
+                            curConfig = configOptions;
+                        }
+                    }
+                    if(element.type == 'select-multiple' && ('options' in element)) {
+                        $A(element.options).each(function(selectOption) {
+                            if (('selected' in selectOption) && typeof(configOptions[selectOption.value]) != 'undefined') {
+                                if (selectOption.selected) {
+                                    curConfig = configOptions[selectOption.value];
+                                } else {
+                                    curConfig = {price: 0};
+                                }
+                                optionsPrice.addCustomPrices(optionId + '-' + selectOption.value, curConfig);
+                                optionsPrice.reload();
+                            }
+                        });
+                    } else {
+                        optionsPrice.addCustomPrices(element.id || optionId, curConfig);
+                        optionsPrice.reload();
+                    }
+                }
+            });
+        }
+    }
+    function validateOptionsCallback(elmId, result) {
+        var container = $(elmId).up('ul.options-list');
+        if (result == 'failed') {
+            container.removeClassName('validation-passed');
+            container.addClassName('validation-failed');
+        } else {
+            container.removeClassName('validation-failed');
+            container.addClassName('validation-passed');
+        }
+    }
+    
+     function validateDownloadableCallback(elmId, result) {
+            var container = $('downloadable-links-list');
+            if (result == 'failed') {
+                container.removeClassName('validation-passed');
+                container.addClassName('validation-failed');
+            } else {
+                container.removeClassName('validation-failed');
+                container.addClassName('validation-passed');
+            }
+        }
+</script>
+         
+<script type="text/javascript">var Translator = new Translate({"Please use only letters (a-z or A-Z), numbers (0-9) or underscore(_) in this field, first character should be a letter.":"Please use only letters (a-z or A-Z), numbers (0-9) or underscores (_) in this field, first character must be a letter."});</script><script>
+$j(document).ready(function() {
+  $j(".reviewnotlogin").colorbox({iframe:true, innerWidth:750, innerHeight:580});
+  
+ });
+</script>
+<script type="text/javascript">
+$j(document).ready(function() {
+    $j('#mycarousel').jcarousel();
+	$j(".donations").colorbox({iframe:true, innerWidth:650, innerHeight:460, open:true});
+	$j(".shippingestimate").colorbox({iframe:true, innerWidth:516, innerHeight:143});
+	});
+</script>
+<script>
+$j(document).ready(function() {
+  $j(".reviewrating").colorbox({iframe:true, innerWidth:516, innerHeight:530 });
+  $j(".reviewrating1").colorbox({iframe:true, innerWidth:516, innerHeight:530,open:true});
+  
+ });
+</script>
+<style type="text/css">#nav li.parent>a>span{ cursor:default}</style>
+
+<!--[if gte IE 9]> <script type="text/javascript"> Cufon.set('engine', 'canvas'); </script> <![endif]-->
+<script type="text/javascript">
+  var _kmq = _kmq || [];
+  function _kms(u){
+    setTimeout(function(){
+    var s = document.createElement('script'); var f = document.getElementsByTagName('script')[0]; s.type = 'text/javascript'; s.async = true;
+    s.src = u; f.parentNode.insertBefore(s, f);
+    }, 1);
+  }
+  _kms('//i.kissmetrics.com/i.js');_kms('//doug1izaerwt3.cloudfront.net/4bbea9fe2ac2ad5735f9ad5e6ab3514d95d7a01d.1.js');
+</script>
+<style type="text/css">
+.artist-terms{ text-align:justify; color:#525252}
+.artist-terms h2{ font-size:20px !important}
+.artistcontest #statustxt{ top:4px}
+.cms-terms-and-conditions .main{ text-align:justify}
+.cms-terms-and-conditions .main h2{ font-size:20px !important}
+
+</style><script type="text/javascript">
+$j(document).ready(function(){
+	$j(".viewsize").colorbox({iframe:true, innerWidth:525, innerHeight:340, onLoad:function(){$j('#cboxClose').remove()}});
+});
+</script>
+</head>
+<body class=" artistcontest-index-index">
+
+<!-- BEGIN GOOGLE ANALYTICS CODE -->
+<script type="text/javascript">
+//<![CDATA[
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+    })();
+
+    var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-20020986-1']);
+_gaq.push(['_trackPageview']);
+
+
+//]]>
+</script>
+<!-- END GOOGLE ANALYTICS CODE --><div class="wrapper">
+        <div class="page">
+        <link href="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/css/olapic/olapic.css" type="text/css" rel="stylesheet"/>
+<script>
+$j(document).ready(function() {
+   // put all your jQuery goodness in here.
+   shoemenuchange();
+ });
+</script>
+<style>
+.freeshipping{ color:#FFF; text-decoration:none; font-size:12px;}
+.daddybday{ color:#0099CC; text-decoration:none;}
+.nav-container {
+    margin: 0 auto;
+    padding: 10px 0 0 !important;
+    width: 998px !important;
+}
+#nav-right{ width:auto}
+.main{ width:998px}
+.header li a{ font-size:11px}
+
+.contactContainer{ margin-top:10px; width:100%}
+.cms-contact-us h1{ margin:0; padding:10px 0; font-size:28px}
+.contactContainer h2, .contactus-body{ width:100%}
+.contactus-left, .contactus-left p, .contactus-ulc{ width:634px}
+.contactus-li, .contactus-feed{ width:300px}
+.main-container{ clear:both}
+.toolbar{ padding:0}
+.abloutus-ourstory, .abloutus-ourstory-content, .aboutusContainer{ margin-top:0 !important}
+.rewardssocial-widgets{ display:none}
+
+
+
+
+
+img:nth-child(2){
+         box-shadow: rgba(0,0,0,0.20) 0 10px 10px;
+}
+
+
+
+
+
+
+</style>
+<!-- Lightning Bolt Begins -->
+	<script type="text/javascript">
+		var lb_rn = new String(Math.random()); var lb_rns = lb_rn.substring(2, 12);
+	var boltProtocol = ('https:' == document.location.protocol) ? 'https://' : 'http://';
+	try {
+		var newScript = document.createElement('script');
+		var scriptElement = document.getElementsByTagName('script')[0];
+		newScript.type = 'text/javascript';
+		newScript.id = 'lightning_bolt_' + lb_rns;
+		newScript.src = boltProtocol + 'b3.mookie1.com/2/LB/' + lb_rns + '@x96?';
+		scriptElement.parentNode.insertBefore(newScript, scriptElement);
+		scriptElement = null; newScript = null;
+	} catch (e) { }
+	</script>
+<!-- Lightning Bolt Ends -->
+<script type="text/javascript">
+$j(document).ready(function(){
+//	$j('#showmodelpopup').click(function(){
+//		var isMobileDevice = navigator.userAgent.match(/iPad|iPhone|iPod/i) != null || navigator.userAgent.match(/Android/i) || screen.width <= 480;
+//		if(isMobileDevice){
+//			$j("#showmodelpopup").colorbox({
+//				iframe:true,			
+//				width:screen.width+140,
+//				height:screen.height+30,
+//				/*reposition: true,*/
+//				open:false,
+//				scrolling:false,
+//				/*fixed:true,*/
+//				onLoad: function() {  
+//					$j('head').append('<meta name="viewport" content="width=device-width,minimum-scale=0.8,initial-scale=0.8,maximum-scale=0.8,user-scalable=0" /><meta name="HandheldFriendly" content="true"/>');		
+//					$j('html,body').css({'overflow': 'hidden'});				
+//					$j('#cboxClose').remove();
+//					/*SetCookie('emailpop','1','200');"*/
+//				},
+//				onClosed:function() { location.reload(true); }
+//			});
+//		}
+//		else{
+//			$j("#showmodelpopup").colorbox({
+//				iframe:true,
+//				width:'610',
+//				height:'570',
+//				open:true,
+//				scrolling:false,
+//				onLoad: function() {
+//					$j('#cboxClose').remove();
+//					/*SetCookie('emailpop','1','200');*/
+//				},
+//				onClosed:function() { location.reload(true); }
+//			});
+//		}
+//	});
+})
+</script>
+<div class="header-container">
+    <div class="header-contant">
+    <div class="header">
+    	<ul style="float:left; margin-top:10px">
+            <li>
+            	                    <a href="http://www.bucketfeet.com/index.php/hello_reg" id="showmodelpopup3" target="_blank" style="font-size:13px;text-transform: uppercase;">Join our mailing list for exclusive content and offers!</a>
+                    <!--email-chemp-->
+                                         
+					
+					            </li>
+        </ul>
+        <ul class="links">
+            <li class="first" ><a href="https://www.bucketfeet.com/index.php/customer/account/" title="Dashboard"  >My Account</a></li>
+                    <li ><a href="http://www.bucketfeet.com/index.php/checkout/cart/" title="My Cart"  id = "mycarttop"class="top-link-cart">My Cart</a></li>
+                    <li ><a href="http://www.bucketfeet.com/index.php/checkout/cart/" title="Checkout"  class="top-link-checkout">Checkout</a></li>
+                    <li class=" last" ><a href="https://www.bucketfeet.com/index.php/customer/account/login/" title="Login"  >LogIn</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="nav-container">          
+        <style type="text/css">
+.nav-container .logo{ background:url("http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/images/img/bucketfeet-logo.png") no-repeat scroll center 0 transparent !important}
+#nav{ width:998px !important; height:42px; padding:24px 0 0 !important; position:relative}
+.nav-4 a{ padding:7px 15px !important}
+#nav li.over ul.last{ left:-76px;}
+/*#nav ul.last li a{ text-align:right}*/
+#nav ul.last li.first a{ border-radius:6px 0 0 0;}
+#nav{padding: 22px 0 0 !important; height:77px;}
+#nav li>a:hover span{ color:#fff }
+#nav li.parent > a > span{ cursor:pointer !important}
+
+</style>
+<!--[if IE]>
+<style>
+ .nav-container .logo{ width: 286px !important;}  
+</style>
+<![endif]-->
+            <ul id="nav">
+                <li class="level0 nav-1 parent men-nav" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)">
+			<a title="Men" href="http://www.bucketfeet.com/index.php/men.html"><span>Men</span></a>
+	        <ul class="level0">
+		        <li class="level1 nav-1-1 first"><a href="http://www.bucketfeet.com/index.php/men.html"><span>View All New</span></a></li>
+	            <li class="level1 nav-1-3"><a href="http://www.bucketfeet.com/index.php/men/lace-up.html"><span>Lace Up</span></a></li>
+	            <li class="level1 nav-1-4"><a href="http://www.bucketfeet.com/index.php/men/slip-on.html"><span>Slip On</span></a></li>
+                <li class="level1 nav-1-5"><a href="http://www.bucketfeet.com/index.php/hoodies-tees.html"><span>Hoodies & tees</span></a></li>
+                <li class="level1 nav-1-6"><a href="http://www.bucketfeet.com/index.php/gift-card/gift-card.html"><span>Gift card</span></a></li>
+	            <li class="level1 nav-1-7 last"><a href="http://www.bucketfeet.com/index.php/men/clearance.html"><span>Clearance </span></a></li>
+	        </ul>
+		</li>
+        <li class="level0 nav-2 parent women-nav" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)">
+			<a title="Women" href="http://www.bucketfeet.com/index.php/women.html"><span>Women</span></a>
+        	<ul class="level0">
+	            <li class="level1 nav-2-1 first"><a href="http://www.bucketfeet.com/index.php/women.html"><span>View All New</span></a></li>
+	            <li class="level1 nav-2-3"><a href="http://www.bucketfeet.com/index.php/women/lace-up.html"><span>Lace Up</span></a></li>
+	            <li class="level1 nav-2-4"><a href="http://www.bucketfeet.com/index.php/women/slip-on.html"><span>Slip On</span></a></li>
+                <li class="level1 nav-2-5"><a href="http://www.bucketfeet.com/index.php/hoodies-tees.html"><span>Hoodies & tees</span></a></li>
+                <li class="level1 nav-2-6"><a href="http://www.bucketfeet.com/index.php/gift-card/gift-card.html"><span>Gift card</span></a></li>
+	            <li class="level1 nav-2-7 last"><a href="http://www.bucketfeet.com/index.php/women/clearance.html"><span>Clearance</span></a></li>
+            </ul>
+		</li>
+        <li class=' nav-3 parent level0 kids-nav'><a title="Kids"  href="http://www.bucketfeet.com/index.php/kids.html"><span style="cursor:pointer">KIDS</span></a>
+	        
+        </li>
+        
+        <li style="position:relative; height:20px; bottom:32px; margin:0 44px 0 92px;bottom:18px;"><a style="padding-bottom:0; height:64px" href="http://www.bucketfeet.com/" title="BucketFeet" class="logo">bucketfeet</a></li>
+        
+        <li class='nav-3 parent level0 artist-nav'><a href="http://www.bucketfeet.com/index.php/artist_collective" title="Artists"><span style="cursor:pointer">ARTISTS</span></a></li>
+        
+        <li onmouseout="toggleMenu(this,0)" onmouseover="toggleMenu(this,1)" class="level0 nav-3 parent about-nav">
+        	<a class="" href="http://www.bucketfeet.com/index.php/about-us/"><span>About</span></a>
+        	<ul class="level0">
+              	<li class="level1 nav-3-1 first" id=""><a href="http://www.bucketfeet.com/index.php/about-us/" class=""><span>Our Story</span></a></li>
+            	<li class="level1 nav-3-2" id=""><a href="http://www.bucketfeet.com/index.php/about-our-shoe/" class=""><span>Our Shoe</span></a></li>
+	            <li class="level1 nav-3-3" id=""><a href="http://www.bucketfeet.com/index.php/our-team/"><span>Our team</span></a></li>
+                <li class="level1 nav-3-4" id=""><a href="http://blog.bucketfeet.com"><span>Our Blog</span></a></li>
+                <li class="level1 nav-3-5" id=""><a href="http://www.bucketfeet.com/index.php/corporatediscountenquiry/"><span>Group Discounts</span></a></li>
+                <li class="level1 nav-3-6 last" id=""><a href="http://www.bucketfeet.com/index.php/retailer-inquiry/"><span>Become a Retailer</span></a></li>
+            </ul>
+		</li>
+
+
+        <li onmouseout="toggleMenu(this,0)" onmouseover="toggleMenu(this,1)" class="level0 nav-3 parent how-to-wear-nav" id="">
+        	<a style="margin-right:0" href="http://bfaroundtheworld.bucketfeet.com/"><span>How to wear</span></a>
+            <ul class="level0 last">
+                <li class="level1 nav-3-1 first" id=""><a href="http://www.bucketfeet.com/index.php/fall-2013.html"><span>FALL 2013</span></a></li>
+                <li class="level1 nav-3-2" id=""><a href="http://www.bucketfeet.com/index.php/summer-2013.html"><span>SUMMER 2013</span></a></li>
+                <li class="level1 nav-3-3" id=""><a href="http://www.bucketfeet.com/index.php/spring-2013.html"><span>SPRING 2013</span></a></li>
+                	            <li class="level1 nav-3-4 last"><a href="http://bfaroundtheworld.bucketfeet.com"><span>#BUCKETFEET</span></a></li>
+                
+            </ul>
+		</li>
+    </ul>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+	jQuery('#nav li').each(function(){
+		jQuery(this).removeClass('active');
+	})
+	var url = location.href;
+	var url1 = url.split('//');
+	if(strstr1(url1[1],'/men')){
+		jQuery('.men-nav').addClass('active');
+	}else if(strstr1(url1[1],'/women')){
+		jQuery('.women-nav').addClass('active');
+	}else if(strstr1(url1[1],'/about-us') || strstr1(url1[1],'/our-team') || strstr1(url1[1],'/about-our-shoe')){
+		jQuery('.about-nav').addClass('active');
+	}else if(strstr1(url1[1],'/artist') || strstr1(url1[1],'/nextbucket')){
+		jQuery('.artist-nav').addClass('active');
+	}else if(strstr1(url1[1],'/howtowear')){
+		jQuery('.how-to-wear-nav').addClass('active');
+	}else if(strstr1(url1[1],'/kids')){
+		jQuery('.kids-nav').addClass('active');
+	}
+
+})
+function strstr1 (haystack, needle, bool) {
+  var pos = 0;
+  haystack += '';
+  pos = haystack.indexOf(needle);
+  if (pos == -1) {
+    return false;
+  } else {
+    if (bool) {
+      return haystack.substr(0, pos);
+    } else {
+      return haystack.slice(pos);
+    }
+  }
+}
+</script>    </div>
+</div>
+<input type="hidden" value="0" id="closebtn" />
+
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<script type="text/javascript" src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/js/general.js"></script>
+<script>
+function shoemenuchange(){
+	$j('#shoesmenu').mouseover(function() {  
+		$j("#shophe #shopid").css("border-left","1px solid #c9c9c9");
+		$j("#shophe #shopid").css("border-top","1px solid #c9c9c9");
+		$j("#shophe #shopid").css("border-right","1px solid #c9c9c9");
+		$j("#shophe #shopid").css("background-color","#dbdbdb");
+	});
+	$j('#shophe').mouseover(function() {  
+		$j("#shophe #shopid").css("border-left","1px solid #c9c9c9");
+		$j("#shophe #shopid").css("border-top","1px solid #c9c9c9");
+		$j("#shophe #shopid").css("border-right","1px solid #c9c9c9");
+		$j("#shophe #shopid").css("background-color","#dbdbdb");
+	});
+	$j('#extramenu').mouseout(function() {  
+		$j("#shophe #shopid").css("border","1px solid #ececec");
+		$j("#shophe #shopid").css("height","25px");
+		$j("#shophe #shopid").css("background-color","#ececec");
+	});
+	$j('#shoesmenu').mouseout(function() {  
+		$j("#shophe #shopid").css("border","1px solid #ececec");
+		$j("#shophe #shopid").css("height","25px");
+		$j("#shophe #shopid").css("background-color","#ececec");
+	});
+	$j('#nav #shopmenu li').mouseout(function() {  
+		$j("#shophe #shopid").css("border","1px solid #ececec");
+		$j("#shophe #shopid").css("height","25px");
+		$j("#shophe #shopid").css("background-color","#ececec");
+	});
+	$j('#shophe').mouseout(function() {  
+		$j("#shophe #shopid").css("border","1px solid #ececec");
+		$j("#shophe #shopid").css("height","25px");
+		$j("#shophe #shopid").css("background-color","#ececec");
+	});
+	$j('#shopid').mouseout(function() {  
+		$j("#shophe #shopid").css("border","1px solid #ececec");
+		$j("#shophe #shopid").css("height","25px");
+		$j("#shophe #shopid").css("background-color","#ececec");
+	});
+	$j('.over').mouseout(function() {  
+		$j("#shophe #shopid").css("border","1px solid #ececec");
+		$j("#shophe #shopid").css("height","25px");
+		$j("#shophe #shopid").css("background-color","#ececec");
+	});
+	
+	
+	
+}
+</script>
+<!--Popup box block-->
+<a href="http://www.bucketfeet.com/index.php/email-chemp" id="emailsub"></a>
+<div class="eee" style="display:none">98.212.0.159</div>
+<!--End of Popup box block-->                                       <div class="main-container col1-layout" >
+            <div class="main-container col1-layout" >
+                                         <div class="main"  style="width:998px" >
+                                
+                <div class="col-main">
+                                                            <style type="text/css">
+.product-image{height: 230px; width: 330px; display: block;position: relative;}
+.product-image > img:nth-child(2) {    left: 0;    opacity: 0;    position: absolute;    top: 0;
+        }
+.artist-vote-btn{
+    background: url("http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/images/img/buy1.png")no-repeat;
+    color: #FFFFFF;
+    font: bold 20px/1.35 Oswaldlight,sans-serif;
+    height: 40px;
+    width: 125px;
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none; 
+    margin: 10px auto 0 auto;}
+
+.artist-share-buttons{
+    z-index: 999999;
+    width: 100%;
+    margin: 0 auto;
+    margin-left: 8px;
+}
+
+
+.artist-share-buttons li{
+    display: inline;
+    text-decoration: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.artist-share-buttons a{
+    margin: 40px 10px 0 10px;
+}
+
+
+.countstat{text-align: center;width: 180px;float: left; height:53px}
+.countstat .count-title{font-size: 14px;}
+.countstat .count{font-size: 25px;font-weight: bold;}
+
+.artist-show-title{ 
+    font-size: 18px;
+    margin: 10px auto 0 auto;
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    }
+
+.artist-show-title a{ text-decoration:none}
+.artist-show-designed-in{
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    }
+
+.madeto{
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    }    
+#artist-contest-voting{ margin-top:20px}
+
+#artist-contest-voting ul li{width: 330px;float: left;margin-right: 22px;margin-right: 4px;margin-bottom: 20px;}
+#cboxClose{ display:none !important}
+
+
+a{text-decoration: none;}
+
+a.hover{
+background-color: white;    
+background-image: url("images/394-1.jpg");
+ background-repeat: no-repeat;
+    display: block;
+      margin: 0px auto;
+        background-position: center;
+background-size: 100% auto;
+
+width: 330px;
+height: 230px;
+padding: 10px;
+
+}
+
+a.hover:hover{
+     background-image: url("images/394-2.jpg");
+     box-shadow: rgba(0,0,0,0.20) 0 2px 10px; 
+
+    width: 230px;
+    height: 230px;
+    padding: 10px;
+    background-size: 125% auto;
+}
+
+.drop-shadow {
+   position:relative;
+   width:0%;
+}
+.drop-shadow:hover {
+   position:relative;
+   width:260px;
+}
+
+.drop-shadow:before,
+.drop-shadow:after {
+   content:"";
+   position:absolute;
+   z-index:-1;
+   bottom:15px;
+   left:10px;
+   width:50%;
+   height:20%;
+   max-width:400px;
+   -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+   -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+   box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+   -webkit-transform:rotate(-3deg);
+   -moz-transform:rotate(-3deg);
+   -o-transform:rotate(-3deg);
+   transform:rotate(-3deg);
+}
+
+.drop-shadow:after{
+   right:10px;
+   left:auto;
+   -webkit-transform:rotate(3deg);
+   -moz-transform:rotate(3deg);
+   -o-transform:rotate(3deg);
+   transform:rotate(3deg);
+ }
+
+body:before 
+{ 
+   content: "";
+   position: fixed;
+   top: -10px;
+   left: 0;
+   width: 100%;
+   height: 10px;
+   z-index: 100;
+   -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+   -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+   box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+   }
+
+
+ul{
+    margin: 0 auto;
+}
+
+
+</style>
+<link href="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/css/fancybox/jquery.fancybox-1.3.4.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/js/fancybox/jquery.easing-1.3.pack.js"></script>
+<script type="text/javascript" src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/js/fancybox/jquery.fancybox-1.3.4.js"></script>
+<script type="text/javascript" src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	jQuery("a.product-image").fancybox({'transitionIn'		: 'none',
+		'transitionOut'		: 'none',
+		'titlePosition' 	: 'over'
+	});
+	});
+</script>
+<div id="artist-contest-voting">
+<!--<h1 style="font-size:30px">Canvas Shoe Artists Contest</h1>-->
+<img src="images/MadeToStandOut_01.jpg" alt="" style="padding-bottom:20px" />
+<div>
+    <span class="madeto">We gave 50 artists plain canvas shoes and no restrictions. 
+Vote for your 5 favorite designs and check back weekly to continue voting!  (For every vote, you'll be entered to win a free pair of shoes)
+
+Finalists will be displayed at ScopeArt NY with the winning shoe appearing on your feet later this year!</span></div>
+
+
+
+
+
+
+
+
+
+<!--New Code -->
+
+
+
+	<ul>
+		<li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></a></div>
+                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+        </li>
+        <li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</a></span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></div>
+                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+
+        </li>
+        <li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</a></span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></div>
+                                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+
+        </li>
+        <li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></a></div>
+                                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+
+        </li>
+        <li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</a></span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></div>
+                                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+
+        </li>
+        <li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</a></span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></div>
+                                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+
+        </li>
+        <li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></a></div>
+                                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+
+        </li>
+        <li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</a></span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></div>
+                                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+
+        </li>
+        <li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</a></span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></div>
+                                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+
+        </li>
+        <li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></a></div>
+                                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+
+        </li>
+        <li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</a></span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></div>
+                                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+
+        </li>
+        <li><div><a class="hover" href='Artist_page.html'></a>
+        <span class="artist-show-title">
+            <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/view/id/394">
+                Joseph "SentRock" Perez</a></span><br />
+                <span class="artist-show-designed-in">
+                Designed In: Chicago, Illinois</span><br /></div>
+                                <a href="x"><div class="artist-vote-btn">Vote</div></a>
+
+        </li>
+       
+	</ul>
+</div></div>
+    <div class="artist-share-buttons"><ul>
+                                        <li><a onclick="popupwindow('https://www.facebook.com/sharer.php?s=100&p[url]=http%3A%2F%2Fwww.bucketfeet.com%2Findex.php%2Fartist_collective%2F&p[images][0]=http://www.bucketfeet.com/media/artist/thumbs/235_282_josephbig.jpg&caption=Checkout+BucketFeet+Shoes%21&p[title]=Joseph Sentrock Perez&p[summary]=Joseph+%22Sentrock%22+Perez+is+an+artist+originally+from+Phoenix%2C+AZ.+He+moved+to+Chicago+to+pursue+a+change+in+scenery+and+obtain+an+Bachelors+of+Art+%26+Design+at+Columbia+College.+Perez+is+know+for+using+bright+colors%2C+intense+lettering+and+characters+that+grab+the+attention+of+viewer.+A+believer+in+the+quote+%22Art+cannot+deny+the+environment+that+it+i...', 'Facebook',640, 380);" style="margin-left:0"><img src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/images/social_ico/facebook_icon_red.png" alt="" width="50" /></a></li>
+
+                                        <li><a onclick="popupwindow('https://twitter.com/share?url=http%3A%2F%2Fwww.bucketfeet.com%2Findex.php%2Fartist_collective%2F&text=Know about our Bucketfeet Artist - Joseph Sentrock Perez&related=bucketfeet', 'Twitter',640, 480);" ><img src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/images/social_ico/twitter_icon_red.png" alt="" width="50" /></a></li>
+                                        
+                                        <li><a onclick="popupwindow('http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.bucketfeet.com%2Findex.php%2Fartist_collective%2F&media=http%3A%2F%2Fwww.bucketfeet.com%2Fmedia%2Fartist%2Fthumbs%2F235_282_josephbig.jpg&description=Know about our Bucketfeet Artist - Joseph Sentrock Perez', 'Pinterest',750, 380);" ><img src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/images/social_ico/pin_icon_red.png" alt="" width="50" /></a></li>
+                                    </ul>
+                                        
+                                        
+                                        
+
+<!--End new code -->    
+    <div>
+    	<a href="http://www.bucketfeet.com/index.php/terms_and_conditions/" title="Artist Contest - Terms and Conditions" style="font-size:14px; clear:both; padding:20px 0; float:left">Terms and Conditions</a>
+        <a href="http://www.bucketfeet.com/index.php/nextbucketfeetartist/artist-contest-information" title="Learn More About the Contest" style="font-size:14px; padding:20px 0 0 20px; float:left">Learn More About the Contest</a>
+        <a style="font-size:14px; padding:20px 0 0 20px; float:left" href="https://www.bucketfeet.com/index.php/email-chemp/" id="showmodelpopup">Join Our Mailing List!</a>
+    </div>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+    jQuery('.artists-ourartist ul li:nth-child(4n + 1)').css({'clear':'both'})
+})
+jQuery(document).ready(function(){
+    jQuery('.artist-image').hover(
+            function(){ 
+                jQuery('a:nth-child(2)',this).stop(true,true).animate({'opacity':'1'});
+            },
+            function(){
+                jQuery('a:nth-child(2)',this).stop(true,true).animate({'opacity':'0'});
+            }
+        );
+    jQuery('.artist-image>a:nth-child(2)').css({'position':'absolute','top':'0','left':'0','opacity':'0','z-index':'0'});
+});
+function popupwindow(url, title, w, h) {
+  var left = (screen.width/2)-(w/2);
+  var top = (screen.height/2)-(h/2);
+  return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+}
+</script>
+<script type="text/javascript">
+
+function addVote(id){
+	if(jQuery('.vote_button_' + id).hasClass('votedd')){
+		alert('Bucket Foul. We only allows one vote per artist per day. Please come back tomorrow to cast another vote for your favorite design!');
+		return false;
+	}
+	var url = "http://www.bucketfeet.com/index.php/nextbucketfeetartist/list/vote/" + 'artist_id/' + id + '/';
+	jQuery.ajax({
+		type: 'GET',
+		url : url,
+		beforeSend:function(){
+			jQuery('.vote_button_' + id).html('Processing..');
+			jQuery('.vote_button_' + id).css({'line-height':'53px'});
+		},
+		success: function(data){
+			if(data == 'Your already have voted!'){
+				jQuery('.vote_button_' + id).html('Thanks for<br>the vote!');
+				alert('Bucket Foul. We only allows one vote per artist per day. Please come back tomorrow to cast another vote for your favorite design!');
+				return true;
+			}else if(data == ''){
+			  	alert('Please login to vote!');
+				jQuery('.vote_button_' + id).html('Vote!');
+			}else{
+				jQuery('.vote_' + id).text(data);
+				jQuery('.vote_button_' + id).css({'line-height':'26px','background': 'url("http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/images/img/buy-grey1.png") no-repeat'});
+				jQuery('.vote_button_' + id).html('Thanks for<br>the vote!');
+				jQuery('.vote_button_' + id).addClass('votedd');
+			}
+		}
+	})
+}
+
+jQuery(document).ready(function(){
+	jQuery('.product-image').hover(
+			function(){ 
+				jQuery('img:nth-child(2)',this).animate({'opacity':'1'});
+			},
+			function(){
+				jQuery('img:nth-child(2)',this).animate({'opacity':'0'});
+			}
+		);
+	jQuery('#artist-contest-voting ul li:nth-child(3n)').css({ 'margin-right': '0'});
+	
+	jQuery('#showmodelpopup').click(function(){
+		jQuery("#showmodelpopup").colorbox({
+			iframe:true,
+			width:'610',
+			height:'470',
+			open:true,
+			scrolling:false,
+			onLoad: function() {
+				jQuery('#cboxClose').remove();
+				/*SetCookie('emailpop','1','200');*/
+			}
+		});
+	});
+});
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery(".usernotlogin").colorbox({iframe:true, innerWidth:750, innerHeight:580});
+
+  	  jQuery('.usernotlogin').click(function(){
+	  	jQuery('.usernotlogin').each(function(){
+			jQuery(this).removeAttr('id');
+		})
+	  	jQuery(this).attr('id','get_artist_id');
+	  })
+  });
+ 
+function lightset()
+{
+	userreviewsection();	
+}
+
+function lightset_register(){
+	//alert("lightset_register");
+	jQuery.colorbox({innerWidth:750, innerHeight:580, iframe:true, href:"http://www.bucketfeet.com/index.php/ratingrevirewnotlogin?erromsg=10",open:true});
+}
+function lightset_existregister(){
+	//alert("lightset_register");
+	jQuery.colorbox({innerWidth:750, innerHeight:580, iframe:true, href:"http://www.bucketfeet.com/index.php/ratingrevirewnotlogin?erromsg=11",open:true});
+}
+function forgerpwd_close(){
+	window.location = "http://www.bucketfeet.com/index.php/customer/account/forgotpassword/";
+}
+function loading_close(){
+	//alert('comes');
+	document.body.style.overflow = "auto"
+	loadingSet();
+	parent.jQuery.fn.colorbox.close(); 
+	parent.window.location.reload();
+}
+function scroll_window()
+{
+	//alert('ss');
+	document.body.style.overflow = "scroll"
+}
+function returnscroll_window()
+{
+	//alert('ss');
+	document.body.style.overflow = "auto"
+	parent.window.location.reload();
+	loadingSet();
+}
+
+
+</script>                </div>
+            </div>
+        </div>
+        <div class="footer-container">
+    <style type="text/css">
+.footerMailingList{ float:left; width:400px}
+.footer ul.socailnetworks{ margin:0; float:left}
+.footer ul.socailnetworks li{ display:block; padding:0 0 4px}
+.footerlinks{ width:520px}
+#twitter_update_list{     background: none repeat scroll 0 0 #000000;
+    -webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+    color: #FFFFFF;
+    margin-bottom: 9px;
+    height: 40px;
+    padding: 5px 10px;
+    width: 356px; position:relative;
+}
+#twitter_update_list a{ color:#1272BE; text-transform:none}
+#twitter_update_list:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-width: 8px;
+      border-style: solid;
+      border-color: #000 transparent transparent transparent;
+      top: 50px;
+      left: 90px;
+}
+.inner-tweet{ display: block;
+height: 40px;
+overflow: hidden;
+vertical-align: middle;
+line-height: 20px}
+.copyrights{ margin:3px 0 0 }
+	</style>
+    <div class="footer">
+        <div class="footerlinks">
+        	<div class="footer_section" id="footer_section1">
+            	<h6>SHOES</h6>
+                <ul>
+                    <li><a href="http://www.bucketfeet.com/index.php/men.html">Men</a></li>
+                    <li><a href="http://www.bucketfeet.com/index.php/women.html">Women</a></li>
+                    <li><a href="http://www.bucketfeet.com/index.php/gift-card/gift-card.html">Buy Gift Card</a></li>
+                </ul>
+            </div>
+            <div class="footer_section">
+            	<h6>Learn More</h6>
+                <ul>
+                    <li><a href="http://www.bucketfeet.com/index.php/about-us">About Us</a></li>
+                    <li><a href="http://www.bucketfeet.com/index.php/artist_collective">Artists</a></li>
+                    <li><a href="http://blog.bucketfeet.com/">Blog</a></li>
+                    <li><a href="http://www.bucketfeet.com/index.php/press">Press</a></li>                    
+                    <li><a href="http://www.bucketfeet.com/index.php/retailers">Retailers</a></li>
+                    <li><a href="http://bfaroundtheworld.bucketfeet.com/">How to Wear BucketFeet</a></li>
+                </ul>
+            </div>
+            <div class="footer_section">
+            	<h6>Questions</h6>
+                <ul>
+                	<li><a href="http://www.bucketfeet.com/index.php/contact-us">Shipping Rates</a></li>
+                    <li><a href="http://www.bucketfeet.com/index.php/contact-us">Returns & Exchanges</a></li>
+                    <li><a href="http://www.bucketfeet.com/index.php/contact-us">Contact</a></li>
+                    <li><a href="http://www.bucketfeet.com/index.php/faq">FAQ</a></li>
+                    <li><a href="http://www.bucketfeet.com/index.php/referral-program">Refer-a-Friend</a></li>
+                                   </ul>
+            </div>
+			            
+        </div>
+        <div class="footerMailingList">
+        	<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fbucketfeet&amp;send=false&amp;layout=standard&amp;width=400&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:375px; height:65px;" allowTransparency="true"></iframe>
+            <div id="twitter_update_list">
+              <div class="inner-tweet">
+	              Share your <a class="hashtag" href="http://twitter.com/search?q=%23MadeToStandOut" rel="external" target="_blank">#MadeToStandOut</a> Instagram photos! Artists: Enter to design a pair of @<a class="username" href="http://twitter.com/BucketFeet" rel="external" target="_blank">BucketFeet</a> <a class="url" href="http://t.co/fVPjWPtWep" rel="external" target="_blank">http://t.co/fVPjWPtWep</a>              </div>
+            </div>
+            <a href="https://twitter.com/BucketFeet" class="twitter-follow-button" data-show-count="true" data-dnt="true">Follow @BucketFeet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        </div>
+        <ul class="socailnetworks">
+			<li><a href="http://instagram.com/bucketfeet" target="_blank" onclick="javascript:_kmq.push(['record', 'shared', {'outbound destination':'Facebook', 'outbound name':'https://www.facebook.com/bucketfeet', 'outbound medium':'social'}]);"><img src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/images/img/instagram_icon.png" /></a></li>
+			<li><a href="http://pinterest.com/bucketfeet" target="_blank" onclick="javascript:_kmq.push(['record', 'shared', {'outbound destination':'YouTube', 'outbound name':'http://www.youtube.com/bucketfeettv', 'outbound medium':'social'}]);"><img src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/images/img/pinterest_icon.png" width="32" height="32"/></a></li>
+			<li><a href="http://blog.bucketfeet.com/" target="_blank" onclick="javascript:_kmq.push(['record', 'shared', {'outbound destination':'Twitter', 'outbound name':'https://twitter.com/bucketfeet', 'outbound medium':'social'}]);"><img src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/images/img/rss_icon.png" /></a></li>
+			<li><a href="http://vimeo.com/tag:bucketfeet" target="_blank"><img src="http://www.bucketfeet.com/skin/frontend/default/bucketfeetnew/images/img/vimeo_icon.png" /></a></li>
+		</ul>
+        <div class="copyrights">
+        	<div style="float: left; width:450px">
+        	<ul>
+            	<li>&copy; 2011-2013 BucketFeet, Inc. All rights reserved <span>|</span></li>
+                <li><a href="http://www.bucketfeet.com/index.php/privacy-policy/">Privacy Policy</a></li>
+            </ul>
+            <!--<div style="float:left; padding-top:4px;width:100%;">Special thanks to guest artist Tick for paint splatter design.</div>--> 
+            </div>
+            <h3 class="cufongetinvolved" style="margin-top: 17px;"><a href="http://www.bucketfeet.com/index.php/artist_collective">A new artist designs every pair</a></h3>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+adroll_adv_id = "7SHL273USRGBNBDYGO7IIV";
+adroll_pix_id = "DYQYZABQWVCBNPCZTYMYCH";
+(function () {
+var oldonload = window.onload;
+window.onload = function(){
+   __adroll_loaded=true;
+   var scr = document.createElement("script");
+   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+   scr.setAttribute('async', 'true');
+   scr.type = "text/javascript";
+   scr.src = host + "/j/roundtrip.js";
+   ((document.getElementsByTagName('head') || [null])[0] ||
+    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+   if(oldonload){oldonload()}};
+}());
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20020986-1']);
+  _gaq.push(['_setDomainName', '.bucketfeet.com']);
+  _gaq.push(['_trackPageview']); 
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script>
+Cufon.now();
+jQuery('#nav a:nth-child(2)').css('padding','10px 15px');
+</script>
+        
+<!-- Using the JavaScript SDK -->
+<div id="fb-root"></div>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({appId: '',
+             xfbml: true});
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+      '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+
+<script type="text/javascript">
+window.oldFbAsyncInit = window.fbAsyncInit || function(){};
+window.fbAsyncInit = function() {
+	window.oldFbAsyncInit();
+
+	var notification_elem = $('facebook-like-rewards-notification');
+	var flr = new FacebookLikeReward('http://www.bucketfeet.com/index.php/rewardssocial/facebook_like/onLike/', $('facebook-like-rewards-notification-content'), 'Td5ZKSgfcpWgnOTQ9fz7OAAfkQx3c57wGS4dE4NCKt2n6GGdx/kGfGHHNnQaZz7v', $('facebook-like-rewards-ajax-loading'));
+
+	eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('7.2.3(\'c.d\',4(1){7.2.3(\'a.e\',4(1){9.b()});7.2.3(\'a.f\',4(1){9.g()});l(5){m 6=k.j(\'h\')[0].8;6.8.i(5,6);5.n()}});',24,24,'|response|Event|subscribe|function|notification_elem|likeButton|FB|parentNode|flr|edge|onLike|xfbml|render|create|remove|onUnLike|fb_iframe_widget|insertBefore|getElementsByClassName|document|if|var|show'.split('|'),0,{}));
+
+};
+
+</script>    </div>
+</div>
+</body>
+</html>
